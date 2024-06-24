@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 
 import App from './App';
 import AllPosts from './AllPosts';
@@ -8,6 +8,10 @@ const routes = [
     {
         element: <App />,
         children: [
+            {
+                path: "/",
+                element: <Navigate to="/posts" />,
+            },
             {
                 path: "/posts",
                 element: <AllPosts />,
