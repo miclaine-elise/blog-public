@@ -32,7 +32,7 @@ export default function NewCommentForm({ remount }) {
     async function sendComment() {
         try {
             const response = await fetch(
-                `https://blog-api-production-7765.up.railway.app/posts/${postId}/comments/new`,
+                `https://blog-api-production-7765.up.railway.app/blog/posts/${postId}/comments/new`,
                 {
                     method: 'POST',
                     mode: 'cors',
@@ -43,7 +43,7 @@ export default function NewCommentForm({ remount }) {
                     body: JSON.stringify({
                         author: authorInput,
                         text: textInput,
-                        isAdmin: true,
+                        isAdmin: false,
                     }),
                 },
             );
